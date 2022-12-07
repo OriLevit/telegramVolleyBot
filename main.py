@@ -1,6 +1,9 @@
 from telegram.ext import *
+
+import Constants
 import Constants as keys
 import Responses as R
+import scrape_main as scraper
 
 print("Bot started....")
 
@@ -34,5 +37,4 @@ def main():
 
     updater.start_polling()
     updater.idle()
-
 main()
