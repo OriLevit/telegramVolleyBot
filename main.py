@@ -1,9 +1,6 @@
 from telegram.ext import *
-
-import Constants
 import Constants as keys
 import Responses as R
-import scrape_main as scraper
 
 print("Bot started....")
 
@@ -18,7 +15,7 @@ def help_command(update, context):
 
 def handle_message(update, context):
     text = str(update.message.text).lower()
-    response = R.sample_responses(text)
+    response = R.sample_responses(update,text)
 
     update.message.reply_text(response)
 

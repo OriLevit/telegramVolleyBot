@@ -33,13 +33,13 @@ def print_games(games_list: list):
     counter = 1
     for game in games_list:
         final_msg += "------------------------------------------------------------------------"
-        final_msg+=f"\nמשחק #{counter}\n"
-        final_msg+=f"\nמתי?"
-        final_msg+=f"\n בתאריך{game['date']} בשעה {game['time']}"
-        final_msg+=f"\nמי?"
-        final_msg+=f"\n{game['first_team']}  *נגד*  {game['second_team']}"+"\n"
-        final_msg+=f"\nאיפה?"
-        final_msg+=f"\n{game['venue']}"+"\n"
+        final_msg += f"\nמשחק #{counter}\n"
+        final_msg += f"\nמתי?"
+        final_msg += f"\nבתאריך {game['date']} בשעה {game['time']}"
+        final_msg += f"\nמי?"
+        final_msg += f"\n{game['first_team']}  *נגד*  {game['second_team']}" + "\n"
+        final_msg += f"\nאיפה?"
+        final_msg += f"\n{game['venue']}" + "\n"
 
         counter += 1
     final_msg += "------------------------------------------------------------------------"
@@ -53,3 +53,12 @@ def get_teams_sorted(league_table):
     for link in all_leagues_links:
         soup_manager.get_teams(link, all_teams)
         return all_teams
+
+
+def print_all_leagues(game_list):
+    leagues = ""
+    counter = 1
+    for league in game_list:
+        leagues += f"\n{counter}. {league['title']}"
+        counter+=1
+    return leagues+"\n"
